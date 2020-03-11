@@ -91,7 +91,7 @@ MongoClient.connect(config.db, function(err, db) {
         key: "sessionId",
         */
 
-        /*
+
         // Fix for A3 - XSS
         // TODO: Add "maxAge"
         cookie: {
@@ -99,7 +99,7 @@ MongoClient.connect(config.db, function(err, db) {
             // Remember to start an HTTPS server to get this working
             // secure: true
         }
-        */
+        
 
     }));
 
@@ -138,7 +138,7 @@ MongoClient.connect(config.db, function(err, db) {
 
         // Fix for A3 - XSS, enable auto escaping
         autoescape: true // default value
-        
+
     });
 
     // Insecure HTTP connection
