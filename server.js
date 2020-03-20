@@ -18,7 +18,7 @@ var routes = require("./app/routes");
 var config = require("./config/config"); // Application config properties
 
 // Fix for A6-Sensitive Data Exposure
-  //Load keys for establishing secure HTTPS connection
+//Load keys for establishing secure HTTPS connection
 var fs = require("fs");
 var https = require("https");
 var path = require("path");
@@ -141,18 +141,16 @@ MongoClient.connect(config.db, function(err, db) {
         autoescape: true // default value
 
     });
-
+    /*
     // Insecure HTTP connection
     http.createServer(app).listen(config.port, function() {
         console.log("Express http server listening on port " + config.port);
     });
-
-
+    */
     // Fix for A6-Sensitive Data Exposure
     // Use secure HTTPS protocol
     https.createServer(httpsOptions, app).listen(config.port,  function() {
         console.log("Express https server listening on port " + config.port);
     });
-    
 
 });
